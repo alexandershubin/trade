@@ -1,0 +1,114 @@
+body {
+  font-family: "PFDinTextPro-Light", sans-serif;
+  font-size: 16px;
+  min-width: 320px;
+  margin: 0;
+  padding: 0;
+  background-color: $body-background;
+  color: rgb(36, 36, 36);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.visually-hidden {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  white-space: nowrap;
+
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+button:hover {
+  opacity: 0.5;
+}
+
+a:hover {
+  opacity: 0.5;
+}
+
+.fade {
+  animation-name: fade;
+  animation-duration: 2.5s;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.3;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: block !important;
+}
+
+@keyframes move {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-60vh);
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(180deg);
+  }
+}
+
+.move {
+  animation-name: move;
+  animation-duration: 0.7s;
+}
+
+@media(max-width: 768px) {
+  .active {
+    border-bottom: 2px solid #009e82;
+    color: #009e82;
+    &:after {
+      content: url("../img/arrow.png");
+      position: absolute;
+      right: 15px;
+      top: 25px;
+      transform: rotateX(180deg);
+      animation-name: rotate;
+      animation-duration: 0.5s;
+    }
+  }
+}
+
+.active {
+  border-bottom: 2px solid #009e82;
+  color: #009e82;
+}
+
+.disable {
+  border: none;
+}
